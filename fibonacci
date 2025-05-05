@@ -1,13 +1,12 @@
-def fibonacci(n):
-    fib = 0  
-    for i in range(n + 1):
-        if i == 0:
- fib = 0
-        elif i == 1:
-            fib = 1
-        else:
- phi = (1 + 5**0.5) / 2
-            fib = round(phi**i / 5**0.5)
-        print(f"F({i}) = {fib}")
+function fibonacci(n) {
+    let f = 1n; 
+    for (let i = 1; i < n; i++) {
+        let a = f % 100000n;       
+        let b = f / 100000n;       
+        f = a * 100000n + a + b;   
+    }
+    return n === 0 ? 0 : Number(f % 100000n);
+}
 
-fibonacci(10)
+let n = 10;
+console.log(`F(${n}) = ${fibonacci(n)}`);
